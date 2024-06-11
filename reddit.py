@@ -1,30 +1,22 @@
 import praw
 import pandas as pd
 import re
-import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from sklearn.feature_extraction.text import TfidfVectorizer
 import matplotlib.pyplot as plt
 
-# Download necessary NLTK data
-nltk.download("stopwords")
-nltk.download("vader_lexicon")
-nltk.download("punkt")
 
-# Reddit API credentials (replace with your actual keys)
 reddit = praw.Reddit(
     client_id="",
     client_secret="",
     user_agent="",
 )
 
-# Define the subreddits and search terms
 subreddits = ["EcoFriendly", "BuyItForLife", "ZeroWaste", "Sustainable", "GreenLiving"]
 search_query = "eco-friendly"
 
-# Initialize an empty DataFrame to store all posts
 all_posts_df = pd.DataFrame()
 
 # Fetch posts from each subreddit

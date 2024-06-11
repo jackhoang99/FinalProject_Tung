@@ -2,7 +2,6 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 import re
-import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
@@ -11,11 +10,6 @@ from sklearn.decomposition import LatentDirichletAllocation
 from time import sleep
 import seaborn as sns
 import matplotlib.pyplot as plt
-
-# Download necessary NLTK data
-nltk.download("stopwords")
-nltk.download("vader_lexicon")
-nltk.download("punkt")
 
 
 def soup2list(src, list_, attr=None):
